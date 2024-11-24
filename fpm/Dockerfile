@@ -1,5 +1,5 @@
 # Latest version of PHP base image: https://hub.docker.com/_/php?tab=tags
-FROM php:8.2.26-fpm-bullseye AS runtime
+FROM php:8.2.26-fpm-bookworm AS runtime
 
 ARG UNIQUE_ID_FOR_CACHEFROM=runtime
 
@@ -24,10 +24,10 @@ RUN apt-get update \
         curl \
         msmtp-mta \
         # Dependency of the PHP intl-extension
-        libicu67 \
+        libicu72 \
         # Dependency of the PHP gd-extension
         libpng16-16 \
-        libwebp6 \
+        libwebp7 \
         libjpeg62-turbo \
         libfreetype6 \
         # Dependency of PHP zip-extension
