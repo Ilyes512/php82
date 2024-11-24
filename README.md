@@ -9,18 +9,16 @@ A PHP 8.2 (FPM and Apache) based Docker base image.
 ```
 docker pull ghcr.io/ilyes512/php82:runtime-latest
 docker pull ghcr.io/ilyes512/php82:builder-latest
-docker pull ghcr.io/ilyes512/php82:builder-nodejs-latest
-docker pull ghcr.io/ilyes512/php82:vscode-latest
+docker pull ghcr.io/ilyes512/php82:builder_nodejs-latest
 
 docker pull ghcr.io/ilyes512/php82/apache:runtime-latest
 docker pull ghcr.io/ilyes512/php82/apache:builder-latest
-docker pull ghcr.io/ilyes512/php82/apache:builder-nodejs-latest
-docker pull ghcr.io/ilyes512/php82/apache:vscode-latest
+docker pull ghcr.io/ilyes512/php82/apache:builder_nodejs-latest
 ```
 
 The tag scheme: `{TARGET}-{VERSION}`
 
-- **{TARGET}**: `runtime`, `builder`, `builder_nodejs` or `vscode`
+- **{TARGET}**: `runtime`, `builder` or `builder_nodejs`
 - **{VERSION}**: `latest` or tag i.e. `1.0.0`
 
 ## Building the docker image(s)
@@ -30,9 +28,6 @@ There are multiple targets:
   - **runtime**: this is for *production*. It does not contain any development tools like Composer and Xdebug.
   - **builder**: this is for *development*. This is based on the runtime-target and it adds Composer, Xdebug etc.
   - **builder_nodejs**: this is for *development*. This is based on the builder-target and it adds NodeJS.
-  - **vscode**: this is for *development* using
-  [VS Code Remote](https://code.visualstudio.com/docs/remote/remote-overview). This is based on the
-  `builder_nodejs`-target and adds some VS Code deps.
 
 Building `runtime`-target:
 
@@ -49,13 +44,7 @@ docker build --tag ghcr.io/ilyes512/php82:builder-latest --file fpm/Dockerfile -
 Building `builder_nodejs`-target:
 
 ```
-docker build --tag ghcr.io/ilyes512/php82:builder-nodejs-latest --file fpm/Dockerfile --target builder_nodejs .
-```
-
-Building `vscode`-target:
-
-```
-docker build --tag ghcr.io/ilyes512/php82:vscode-latest --file fpm/Dockerfile --target vscode .
+docker build --tag ghcr.io/ilyes512/php82:builder_nodejs-latest --file fpm/Dockerfile --target builder_nodejs .
 ```
 
 ## Task commands
