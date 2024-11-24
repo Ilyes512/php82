@@ -9,12 +9,12 @@ A PHP 8.2 (FPM and Apache) based Docker base image.
 ```
 docker pull ghcr.io/ilyes512/php82:runtime-latest
 docker pull ghcr.io/ilyes512/php82:builder-latest
-docker pull ghcr.io/ilyes512/php82:builder-nodejs-latest
+docker pull ghcr.io/ilyes512/php82:builder_nodejs-latest
 docker pull ghcr.io/ilyes512/php82:vscode-latest
 
 docker pull ghcr.io/ilyes512/php82/apache:runtime-latest
 docker pull ghcr.io/ilyes512/php82/apache:builder-latest
-docker pull ghcr.io/ilyes512/php82/apache:builder-nodejs-latest
+docker pull ghcr.io/ilyes512/php82/apache:builder_nodejs-latest
 docker pull ghcr.io/ilyes512/php82/apache:vscode-latest
 ```
 
@@ -49,7 +49,7 @@ docker build --tag ghcr.io/ilyes512/php82:builder-latest --file fpm/Dockerfile -
 Building `builder_nodejs`-target:
 
 ```
-docker build --tag ghcr.io/ilyes512/php82:builder-nodejs-latest --file fpm/Dockerfile --target builder_nodejs .
+docker build --tag ghcr.io/ilyes512/php82:builder_nodejs-latest --file fpm/Dockerfile --target builder_nodejs .
 ```
 
 Building `vscode`-target:
