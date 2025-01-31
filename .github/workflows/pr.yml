@@ -28,6 +28,8 @@ jobs:
           - dockerfile: apache/Dockerfile
             image-name: ghcr.io/${{ github.repository }}/apache
             key: apache
+        include:
+          - os: ubuntu-24.04
     with:
       runs-on: ubuntu-24.04
       platform: ${{ matrix.platform }}
