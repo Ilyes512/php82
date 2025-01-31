@@ -1,5 +1,5 @@
 # Latest version of PHP base image: https://hub.docker.com/_/php?tab=tags
-FROM php:8.2.26-fpm-bookworm AS runtime
+FROM php:8.2.27-fpm-bookworm AS runtime
 
 ARG UNIQUE_ID_FOR_CACHEFROM=runtime
 
@@ -126,11 +126,11 @@ ARG UNIQUE_ID_FOR_CACHEFROM=builder
 # Latest version of Phive: https://api.github.com/repos/phar-io/phive/releases/latest
 ARG PHIVE_VERSION=0.15.3
 # Latest version of Composer: https://getcomposer.org/download
-ARG COMPOSER_VERSION=2.8.3
+ARG COMPOSER_VERSION=2.8.5
 # Latest version of Xdebug: https://github.com/xdebug/xdebug/tags or https://pecl.php.net/package/xdebug
-ARG XDEBUG_VERSION=3.3.2
+ARG XDEBUG_VERSION=3.4.1
 # Latest version of pcov: https://github.com/krakjoe/pcov/tags or https://pecl.php.net/package/pcov
-ARG PCOV_VERSION=1.0.11
+ARG PCOV_VERSION=1.0.12
 
 RUN apt-get update \
     && apt-get install --assume-yes --no-install-recommends \
@@ -188,7 +188,7 @@ RUN apt-get update \
     && apt-get install --assume-yes --no-install-recommends \
         nodejs \
     && npm uninstall --global npm \
-    && corepack install --global npm yarn pnpm \
+    && corepack install --global npm@10.x yarn@4.x pnpm@9.x \
     && corepack enable npm yarn pnpm \
     && apt-get autoremove --assume-yes \
     && apt-get clean --assume-yes \
