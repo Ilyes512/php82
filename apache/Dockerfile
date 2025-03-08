@@ -126,7 +126,7 @@ ARG UNIQUE_ID_FOR_CACHEFROM=builder
 # Latest version of Phive: https://api.github.com/repos/phar-io/phive/releases/latest
 ARG PHIVE_VERSION=0.15.3
 # Latest version of Composer: https://getcomposer.org/download
-ARG COMPOSER_VERSION=2.8.5
+ARG COMPOSER_VERSION=2.8.6
 # Latest version of Xdebug: https://github.com/xdebug/xdebug/tags or https://pecl.php.net/package/xdebug
 ARG XDEBUG_VERSION=3.4.1
 # Latest version of pcov: https://github.com/krakjoe/pcov/tags or https://pecl.php.net/package/pcov
@@ -174,7 +174,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG UNIQUE_ID_FOR_CACHEFROM=builder_nodejs
 
 # Latest version of Node.js: https://nodejs.org
-ARG NODE_MAJOR=20
+ARG NODE_MAJOR=22
 
 RUN apt-get update \
     && apt-get install --assume-yes --no-install-recommends \
