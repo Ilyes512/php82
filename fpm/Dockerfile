@@ -174,7 +174,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ARG UNIQUE_ID_FOR_CACHEFROM=builder_nodejs
 
 # Latest version of Node.js: https://nodejs.org
-ARG NODE_MAJOR=20
+ARG NODE_MAJOR=22
 
 RUN apt-get update \
     && apt-get install --assume-yes --no-install-recommends \
