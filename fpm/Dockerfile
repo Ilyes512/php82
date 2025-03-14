@@ -110,6 +110,7 @@ RUN apt-get update \
         libxml2-dev \
         libpq-dev \
         librabbitmq-dev \
+        libxslt1-dev \
     # Cleanup
     && rm -rf /var/www/* \
     && apt-get autoremove --assume-yes \
