@@ -103,6 +103,7 @@ RUN apt-get update \
         event \
         igbinary \
         redis \
+        memcached \
         amqp \
     && cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
     # Purge packages that where only needed for building php extensions
